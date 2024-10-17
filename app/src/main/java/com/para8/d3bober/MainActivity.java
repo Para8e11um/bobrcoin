@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     int bobrcoin = 0;
     TextView textBottom;
+    TextView textUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,14 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         textBottom = findViewById(R.id.textBottom);
+        textUp = findViewById(R.id.textUp);
     }
 
     public void tapBober(View view) {
         bobrcoin += 1;
         textBottom.setText("BOBRCOIN: "+bobrcoin);
+        if(bobrcoin==10){
+            textUp.setText("Хорошо тапаешь");
+        }
     }
 }
